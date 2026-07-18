@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore connected wine regions, grape varieties, wineries and data-led rankings." />
+    <title>Atlas of Wine — Global Wine Discovery</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Atlas of Wine home">
+          <span class="brand-mark">AW</span>
+          <span><strong>Atlas of Wine</strong><small>Global wine discovery</small></span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <button type="button" data-mode="region" data-scroll="explorer">Regions</button>
+          <button type="button" data-mode="grape" data-scroll="explorer">Grapes</button>
+          <a href="#methodology">Methodology</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="kicker">Explore the world through wine</p>
+          <h1>Find a bottle by <em>place</em> or by <em>grape.</em></h1>
+          <p class="hero-lede">Two paths into one connected catalogue of regions, wineries, grapes, wines and data-led rankings.</p>
+        </div>
+
+        <div class="hero-panel" aria-label="Choose an exploration path">
+          <div class="mode-tabs" role="tablist" aria-label="Explore by">
+            <button type="button" id="regionTab" data-mode="region" role="tab">Explore by region</button>
+            <button type="button" id="grapeTab" data-mode="grape" role="tab">Explore by grape</button>
+          </div>
+
+          <div class="hero-fields" id="regionFields">
+            <label>Country<select id="countrySelect" aria-label="Country"></select></label>
+            <label>Region<select id="regionSelect" aria-label="Region"></select></label>
+            <button type="button" class="primary-button" data-scroll="explorer">View region <span>→</span></button>
+          </div>
+
+          <div class="hero-fields hero-fields--grape is-hidden" id="grapeFields">
+            <label>Grape variety<select id="grapeSelect" aria-label="Grape variety"></select></label>
+            <button type="button" class="primary-button" data-scroll="explorer">View grape <span>→</span></button>
+          </div>
+
+          <div class="popular-links" id="popularLinks"></div>
+        </div>
+
+        <div class="hero-stats" id="heroStats" aria-label="Prototype coverage"></div>
+      </section>
+
+      <section class="explorer" id="explorer">
+        <div class="breadcrumb" id="breadcrumb"></div>
+
+        <div class="overview-grid">
+          <article class="overview-copy" id="overviewCopy"></article>
+          <aside class="relationship-card">
+            <div class="relationship-card__label">Continue exploring</div>
+            <h3 id="relationshipTitle"></h3>
+            <div class="relationship-list" id="relationshipList"></div>
+          </aside>
+        </div>
+
+        <div class="content-grid">
+          <section class="ranking-section">
+            <div class="section-heading">
+              <div><p class="kicker">Data-led selection</p><h2>Top-ranked wines</h2></div>
+              <a href="#methodology">How ranking works</a>
+            </div>
+            <div class="ranking-list" id="rankingList"></div>
+          </section>
+
+          <aside class="sidebar">
+            <section class="sidebar-card">
+              <p class="kicker">Profile</p>
+              <h3 id="profileTitle"></h3>
+              <div class="bar-list" id="barList"></div>
+            </section>
+            <section class="coverage-card">
+              <span class="coverage-icon">◎</span>
+              <div><strong>Location data is verified separately</strong><p id="coverageText"></p></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="winery-section">
+          <div class="section-heading">
+            <div><p class="kicker">Producer directory</p><h2>Wineries in this selection</h2></div>
+            <span id="wineryCount"></span>
+          </div>
+          <div class="winery-grid" id="wineryGrid"></div>
+        </section>
+      </section>
+
+      <section class="methodology" id="methodology">
+        <div><p class="kicker">Transparent by design</p><h2>One catalogue, two trusted jobs.</h2></div>
+        <div class="method-grid">
+          <article><span>01</span><h3>Wine relationships</h3><p>X-Wines connects each wine to its country, region, winery, grape varieties and ratings.</p></article>
+          <article><span>02</span><h3>Fairer ranking</h3><p>Scores use a Bayesian weighted rating, so one perfect review cannot automatically outrank a wine with broader support.</p></article>
+          <article><span>03</span><h3>Conservative locations</h3><p>Winery Map supplies coordinates only after a safe name-and-country match. No match means no guessed pin.</p></article>
+        </div>
+        <p class="data-note">This working prototype uses a 100-wine, 17-country validation slice. Its global structure is ready to receive the full dataset.</p>
+      </section>
+
+      <footer>
+        <div class="brand brand--footer"><span class="brand-mark">AW</span><span><strong>Atlas of Wine</strong><small>Place. Grape. Bottle.</small></span></div>
+        <p>Prototype data: X-Wines + Winery Map</p>
+      </footer>
+    </main>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
