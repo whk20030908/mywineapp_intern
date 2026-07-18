@@ -32,3 +32,7 @@ This is a validation slice rather than the final global database. The interface 
 
 Open `site/index.html` in a browser, or serve the `site` folder with any simple static web server.
 
+
+## Deployment
+
+The static site is published automatically through GitHub Actions and GitHub Pages.
